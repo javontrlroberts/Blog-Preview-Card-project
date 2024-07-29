@@ -1,0 +1,128 @@
+/* root */
+
+:root {
+
+    --clr-yellow: #f4d04e;
+    --clr-white: #ffffff;
+    
+    --clr-gray-500: #6b6b6b;
+    --clr-gray-950: #121212;
+
+    --fs-body: 16px;
+    --ff-body: "Figtree", sans-serif;
+    --fw-500: 500;
+    --fw-800: 800;
+
+}
+
+/* reset */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: inline-block;
+    max-width: 100%;
+}
+
+h1 {
+    line-height: 1.1;
+}
+
+body {
+    font-family: var(--ff-body);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-500);
+    color: var(--clr-gray-500);
+    background: var(--clr-yellow);
+}
+
+/* text styles */
+
+.blogCategory,
+.blogMeta,
+.blogTitle,
+.authorName {
+    color: var(--clr-gray-950);
+}
+
+.blogCategory {
+    display: inline-block;
+    font-weight: var(--fw-800);
+    padding: .5rem .8rem;
+    border-radius: .2rem;
+    background: var(--clr-yellow);
+}
+
+.blogMeta {
+    font-size: 14px;
+}
+
+.blogTitle {
+    font-weight: var(--fw-800);
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: color .3s ease;
+}
+
+.blogTitle:hover {
+    color: var(--clr-yellow);
+}
+
+
+.authorName {
+    font-size: 14px;
+    font-weight: var(--fw-800);
+}
+
+/* general styles */
+
+.wrapper {
+    display: grid;
+    place-items: center;
+    min-height: 100dvh;
+}
+
+.blogContainer {
+    background: var(--clr-white);
+    max-width: 23em;
+    border-radius: 1rem;
+    box-shadow: 7px 7px 0 var(--clr-gray-950); 
+    /* 1st value - horizontal offset | 2nd value - vertical offset | 3rd (opt) - blur | last value - color effect */
+    padding: 1.5rem;
+    margin: 0 1.5rem;
+    transition: box-shadow .3s ease;
+}
+
+.blogContainer:hover {
+    box-shadow: 10px 10px 0 var(--clr-gray-950);
+}
+
+.blogContainer > * + * { 
+    /*  > * + * selects any element that is the next sibling of any element 
+    (+: adjacent sibling combinator).  
+    The first child of a parent doesn't have a previous sibling, so it cannot be selected by this combinator. 
+    */
+    margin-top: 1rem; 
+}
+
+.authorImage {
+    width: 3rem;
+}
+
+.blogImage {
+    border-radius: .8rem;
+}
+
+/* layout styles */
+
+.authorData {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
